@@ -1,0 +1,202 @@
+
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    
+}
+
+
+
+header{
+    width: 100%;
+    min-width: 312px;
+    display: flex;
+    
+    background-color: #008080;
+    gap: 0px;
+    z-index: 100;
+    padding: 1%;
+} 
+    
+
+header h3{
+    font-size: 15px;
+    color: #f4a460;
+    width: 100%;
+    font-family: "Roboto", sans-serif;
+    font-size: large;
+    font-weight: bolder;
+    font-style: normal;
+}
+.logo{
+    width: 15%;
+    min-width: 90px;
+}
+
+header nav{
+width: 70%;
+/* border:1px solid #f4a460; */
+box-sizing: border-box;
+overflow: hidden; 
+
+
+}
+summary{
+    color: #f5f5f5;
+}
+
+header ul{
+    display: flex;
+    justify-content: right;
+    gap: 3pc;
+    animation: up 0.9s ease 1;
+    
+}
+
+@keyframes up {
+    0%{
+        transform: translateY(1pc);
+        opacity: 0%;
+        
+    }
+
+    100%{
+    transform: translateY(0pc);
+
+    
+}
+}
+form {
+    text-align: center;
+    box-shadow: 2px 2px 25px #c0bdbd ;
+}
+
+header li{
+    list-style-type: none;
+
+
+}
+
+header a{
+    text-decoration: none;
+    color: #f5f5f5;
+}
+
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 60px;  
+}
+
+form{
+   
+    background-color: #f5f5f5; 
+    height: auto;
+    width: 350px;
+    border-radius: 15px;
+    align-items: center;
+    margin-bottom: 4PC;
+
+}
+
+.form input{
+    width: 70%;
+    
+    margin-top: 10px;
+    height: 2.3pc;
+    border-radius: 5px;
+    
+    border: 1px solid #f4a460;
+}
+.form select{
+    width: 70%;
+    border: 1px solid #f4a460;
+    margin-top: 10px;
+    border-radius: 5px;
+    height: 2.3pc;
+}
+
+.form textarea{
+    width: 70%;
+    border: 1px solid #f4a460;
+    height: 4pc;
+    margin-top: 10px;
+    border-radius: 8px;
+}
+
+.form h1{
+    text-align: center;
+    padding: 1pc;
+    color: #008080;
+    font-family: "Roboto", sans-serif;
+    
+}
+
+
+.form button{
+    margin-top: 30px;
+    width: 70%;
+    transform: translateY(-5px);
+    padding: 1pc;
+    margin-bottom: 30px;
+    
+    border-radius: 8px;
+    color: #f5f5f5;
+    background-color: #008080;
+    transition: all 0.3s ease;
+}
+
+.form button:hover{
+    color: #f5f5f5;
+    background-color: #008080;
+    transition: all 0.3s ease;
+    scale: 1.05;
+}
+
+footer{
+    background-color: black;
+    padding: 1pc;
+    height: auto;
+  }
+
+  footer .options{
+    width: 100%;
+    display: flex;
+    height: 100px;
+    justify-content: space-around;
+    
+  }
+
+  footer .links{
+    width: 200px;
+    
+  }
+
+  footer h3{
+    color: #fffacd;
+  }
+
+  footer li{
+    list-style-type: none;
+    justify-content: center;
+    line-height: 2pc;
+  }
+
+  footer a{
+    color: #f4a460;
+    text-decoration: none;
+  }
+
+  footer .btttom{
+    margin-top: 40%;
+}
+
+.btttom .copy{
+      color: #f5f5f5;
+      font-weight: 900;
+
+      font-size: large;
+  }
+

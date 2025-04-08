@@ -1,0 +1,426 @@
+
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+    line-height: 1.5;
+}
+
+/* Header Styles */
+header {
+    width: 100%;
+    min-width: 312px;
+    display: flex;
+    flex-direction: column; /* Stack logo and nav on smaller screens */
+    align-items: center; /* Center items horizontally */
+    background-color: #008080;
+    z-index: 100;
+    padding: 1rem; 
+    position: fixed;
+}
+
+.logo {
+    width: auto;
+    min-width: 90px;
+    margin-bottom: 0.5rem; 
+}
+
+.logo h3 {
+    font-size: 1.2rem; 
+    color: #f4a460;
+    font-weight: bolder;
+    font-style: normal;
+    white-space: nowrap;
+}
+.logo a{
+    text-decoration: none;
+}
+
+header nav {
+    width: 100%; /* Make navigation take full width */
+}
+
+header ul {
+    display: flex;
+    flex-direction: row; 
+    align-items: center;
+    gap: 0.5rem; 
+    animation: up 0.9s ease 1;
+    padding: 0; 
+    justify-content: center;
+    width: 80%;
+    animation: up 0.8s 1 200ms;
+    
+}
+
+@keyframes up {
+    0% {
+        transform: translateY(0.5rem);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+header li {
+    list-style-type: none;
+    width: 100%; /* Make each list item take full width */
+    text-align: center; /* Center the link text */
+}
+
+header li a,
+header li summary {
+    font-size: 1rem; 
+    color: #f5f5f5;
+    text-decoration: none;
+    white-space: nowrap;
+    cursor: pointer;
+    display: block; 
+    padding: 0.5rem 0; 
+    margin-right: 2rem;
+}
+
+header li summary::after {
+    content: " ▾";
+    font-size: 0.8rem;
+    margin-left: 0.2rem;
+}
+
+details p {
+    margin-top: 0.5rem;
+    padding-left: 1rem;
+}
+
+details p a {
+    font-size: 1rem;
+    color: #f5f5f5;
+    text-decoration: none;
+    display: block; 
+    padding: 0.5rem 0;
+}
+
+summary::marker {
+    color: #f5f5f5;
+}
+
+
+@media (min-width: 768px) {
+    header {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0.75rem 1rem;
+    }
+
+    .logo {
+        margin-bottom: 0;
+    }
+
+    header nav {
+        width: auto;
+    }
+
+    header ul {
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0;
+    }
+
+    header li {
+        width: auto;
+        text-align: left;
+    }
+
+    header li a,
+    header li summary {
+        display: inline-block;
+        padding: 0; /* Remove vertical padding for horizontal layout */
+    }
+
+    header li summary::after {
+        display: inline; /* Show arrow in horizontal layout */
+    }
+
+    details p a {
+        display: block; /* Keep block for dropdown items */
+        padding-left: 1rem; /* Maintain indentation */
+        padding-top: 0.25rem; /* Adjust padding */
+        padding-bottom: 0.25rem;
+    }
+}
+
+/* Hero Section Styles */
+.hero-section {
+    height: auto;
+    width: 100%;
+    min-width: 312px;
+    overflow: hidden;
+    background-image: url(man-with-dreads-representing-rastafari-movement.jpg);
+    background-size: cover;
+    background-position: center;
+    padding-top: 4rem; 
+}
+
+.hero {
+    background-color: rgba(0, 0, 0, 0.767);
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    min-height: 60vh;
+    min-width: 300px;
+    margin-top: -1pc;
+}
+
+@media (min-width: 768px) {
+    .hero {
+        flex-direction: row;
+        justify-content: space-evenly;
+        padding: 4rem 2rem;
+    }
+}
+
+.circle {
+    width: 60%;
+    max-width: 300px;
+    
+    height: auto;
+    margin: 2rem 0;
+}
+
+@media (min-width: 768px) {
+    .circle {
+        width: 40%;
+        max-width: none;
+        height: 50vh;
+        margin: 4rem;
+    }
+}
+
+.circle .obj {
+    width: 100%;
+    height: 100%;
+    max-height: 400px;
+    max-width: 400px;
+ min-width: none;
+    border-radius: 50%;
+    background-color: #f5f5f5;
+    overflow: hidden;
+    animation: bounce 1s ease 1;
+    background-image: url(close-up-people-playing-drums-carnival.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+@keyframes bounce {
+    0% {
+        opacity: 0.8;
+        transform: scale(0.95);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.info {
+    width: 80%;
+    text-align: center;
+}
+
+@media (min-width: 768px) {
+    .info {
+        width: 50%;
+        height: auto;
+        text-align: center;
+    }
+}
+
+.info h2 {
+    font-size: 3rem;
+    font-weight: 1000;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.781);
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    line-height: 1.2;
+    color: #008080;
+    animation: leftt 01.5s ease 1 100ms;
+}
+
+@keyframes leftt {
+    0% {
+        opacity: 0;
+        transform: translateX(8rem);
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@media (min-width: 768px) {
+    .info h2 {
+        font-size: 7em;
+        margin-top: -5pc;
+        line-height: 9pc;
+    }
+}
+
+.info span {
+    font-size: 1rem;
+    font-style: italic;
+    font-weight: 400;
+    padding: 1rem;
+    color: #f5f5f5;
+    margin-left: 0;
+    width: 100%;
+}
+
+@media (min-width: 768px) {
+    .info span {
+        font-size: large;
+        padding: 4pc;
+        margin-left: -10px;
+        width: 80%;
+    }
+}
+
+.buttons {
+    margin-top: 1.5rem;
+    width: auto;
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+#left,
+#right {
+    color: #f5f5f5;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 3px;
+    transition: 0.3s ease-in-out;
+    display: inline-block;
+    font-size: 0.9rem;
+}
+
+#left {
+    background-color: #f4a460;
+    animation: ssc 2s ease;
+}
+
+#left:hover {
+    transform: scale(1.05);
+}
+
+@keyframes ssc {
+    0% {
+        transform: scale(1);
+        opacity: 0.9;
+    }
+    100% {
+        transform: scale(1.03);
+        opacity: 1;
+    }
+}
+
+#right {
+    color: #f4a460;
+    background-color: #f5f5f5;
+}
+
+#right:hover {
+    transform: scale(1.05);
+}
+
+/* Footer Styles */
+footer {
+    background-color: black;
+    padding: 1rem;
+    height: auto;
+}
+
+.options {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 1rem;
+    align-items: start;
+}
+
+@media (min-width: 400px) {
+    .options {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 600px) {
+    .options {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: flex-start;
+        grid-template-columns: none;
+    }
+}
+
+.links {
+    text-align: center;
+}
+
+@media (min-width: 600px) {
+    .links {
+        text-align: left;
+    }
+}
+
+.links:nth-child(3) { /* Target the "Contact Us" section */
+    margin-top: 1rem;
+}
+
+footer h3 {
+    color: #fffacd;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+footer ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+footer li {
+    line-height: 1.8;
+}
+
+footer a {
+    color: #f4a460;
+    text-decoration: none;
+}
+
+.copyright {
+    margin-top: 2rem;
+    text-align: center;
+    grid-column: 1 / -1;
+}
+
+.copyright .copy {
+    color: #f5f5f5;
+    font-weight: 900;
+    font-size: 1rem;
+}

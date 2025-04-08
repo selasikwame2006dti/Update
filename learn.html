@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tourism</title>
+    <link rel="stylesheet" href="learn.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <h3>DI-BTEC PROJECT</h3>
+        </div>
+        <nav class="original-nav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li>
+                    <details>
+                        <summary>Explore</summary>
+                        <p><a href="sites.html">Tourist Sites</a></p>
+                        
+                        <p><a href="#">Foods and galery</a></p>
+                    </details>
+                </li>
+            <li><details>
+                    <summary>Learn</summary>
+                    <p><a href="learn.html">Languages</a></p>
+                    <p><a href="#">About Project</a></p>
+                </details>
+            </li>
+                <li><a href="book.html">Book Visit</a></li>
+            </ul>
+        </nav>
+        <button class="mobile-menu-toggle" aria-label="Toggle navigation">
+            <i class="fas fa-bars"></i>
+        </button>
+    </header>
+
+    <main>
+        <section class="language-hero">
+            <h1>Learn Basic Fante Phrases</h1>
+            <p>Essential greetings and responses for cultural immersion</p>
+        </section>
+
+        <div class="phrase-grid">
+            <!-- Greeting -->
+            <div class="phrase-card">
+                <span class="fante-text">Ɛte sɛn?</span>
+                <span class="phonetic">(Eh-teh sen?)</span>
+                <p class="translation">How are you?</p>
+                <audio controls>
+                    <source src="audio/greeting.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+            </div>
+
+            <!-- Response -->
+            <div class="phrase-card">
+                <span class="fante-text">Meye yie</span>
+                <span class="phonetic">(Meh-yeh yee-eh)</span>
+                <p class="translation">I'm fine</p>
+                <audio controls>
+                    <source src="audio/response.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+            </div>
+
+            <!-- More phrases... -->
+        </div>
+
+        <section class="booking-cta">
+            <h2>Ready to Experience Our Culture?</h2>
+            <a href="book.html" class="cta-button">
+                Book Your Visit Now <i class="fas fa-arrow-right"></i>
+            </a>
+        </section>
+    </main>
+
+    <script >
+        // Mobile navigation
+const mobileToggle = document.querySelector('.mobile-menu-toggle');
+const mainNav = document.querySelector('.original-nav');
+
+mobileToggle.addEventListener('click', () => {
+    mainNav.classList.toggle('active');
+});
+
+// Close mobile menu on click outside
+document.addEventListener('click', (e) => {
+    if (!mainNav.contains(e.target) && !mobileToggle.contains(e.target)) {
+        mainNav.classList.remove('active');
+    }
+});
+
+// Smooth scroll for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+        });
+    });
+});
+    </script>
+</body>
+</html>

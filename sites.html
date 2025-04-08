@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Central Region Ghana | Cultural Heritage & Tourism</title>
+    <link rel="stylesheet" href="site.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <header class="original-header">
+        <div class="logo">
+            <h3>DI BTEC PROJECT</h3>
+        </div>
+        <nav class="original-nav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li>
+                    <details>
+                        <summary>Explore</summary>
+                        <p><a href="sites.html">Tourist Sites</a></p>
+                        
+                        <p><a href="#">Foods and galery</a></p>
+                    </details>
+                </li>
+                <li>
+                    <details>
+                        <summary>Learn</summary>
+                        <p><a href="learn.html">Languages</a></p>
+                        <p><a href="#">About Project</a></p>
+                    </details>
+                </li>
+               
+                <li><a href="book.html">Contact & Booking</a></li>
+        </nav>
+        <button class="mobile-menu-toggle" aria-label="Toggle navigation">
+            <i class="fas fa-bars"></i>
+        </button>
+    </header>
+
+    <main>
+        
+        <section class="hero-modern" id="hero">
+            <div class="hero-content" data-scroll>
+                <h1>Discover Central Region's Heritage</h1>
+                <p>Explore Centuries of History & Natural Beauty</p>
+                <div class="hero-scroll-indicator">
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+            </div>
+        </section>
+
+        
+        <section class="featured-sites" id="sites">
+            <h2 class="section-title">Historical Landmarks</h2>
+            <div class="site-grid">
+               
+                <article class="site-card-modern">
+                    <div class="card-image">
+                        <img src="elmina-castle.jpg" alt="Elmina Castle aerial view" loading="lazy">
+                        <div class="card-badge">UNESCO Site</div>
+                    </div>
+                    <div class="card-content">
+                        <h3>Elmina Castle</h3>
+                        <p>First European trading post in sub-Saharan Africa</p>
+                        <button class="cta-button" data-target="#elmina-details">
+                            Explore <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </article>
+
+                <!-- Cape Coast Castle -->
+                <article class="site-card-modern">
+                    <div class="card-image">
+                        <img src="cape-coast.jpg" alt="Cape Coast Castle facade" loading="lazy">
+                        <div class="card-badge">Museum</div>
+                    </div>
+                    <div class="card-content">
+                        <h3>Cape Coast Castle</h3>
+                        <p>Historic slave trade documentation center</p>
+                        <button class="cta-button" data-target="#cape-coast-details">
+                            Discover <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </article>
+
+                <!-- Kakum National Park -->
+                <article class="site-card-modern">
+                    <div class="card-image">
+                        <img src="kakum.jpg" alt="Canopy walkway in rainforest" loading="lazy">
+                        <div class="card-badge">Nature Reserve</div>
+                    </div>
+                    <div class="card-content">
+                        <h3>Kakum National Park</h3>
+                        <p>Tropical rainforest with canopy walkways</p>
+                        <button class="cta-button" data-target="#kakum-details">
+                            Explore <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </article>
+
+                <!-- Brenu Beach -->
+                <article class="site-card-modern">
+                    <div class="card-image">
+                        <img src="brenu.jpg" alt="Sandy beach with palm trees" loading="lazy">
+                        <div class="card-badge">Beach Resort</div>
+                    </div>
+                    <div class="card-content">
+                        <h3>Brenu Beach</h3>
+                        <p>Pristine coastline with golden sands</p>
+                        <button class="cta-button" data-target="#brenu-details">
+                            Visit <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Interactive Map -->
+        <section class="interactive-map-section">
+            <div class="map-container">
+                <div id="centralRegionMap"></div>
+                <div class="map-legend">
+                    <div class="legend-item">
+                        <span class="icon historical"></span> Historic Sites
+                    </div>
+                    <div class="legend-item">
+                        <span class="icon nature"></span> Natural Sites
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Cultural Insights -->
+        <section class="cultural-insights" id="culture">
+            <h2 class="section-title">Cultural Heritage</h2>
+            <div class="insight-grid">
+                <article class="insight-card">
+                    <img src="fante.jpg" alt="Fante people dancing" loading="lazy">
+                    <div class="insight-content">
+                        <h3>Fante Traditions</h3>
+                        <p>Experience vibrant festivals and traditional ceremonies</p>
+                        <a href="#" class="text-link">Learn More <i class="fas fa-chevron-right"></i></a>
+                    </div>
+                </article>
+                <article class="insight-card">
+                    <img src="cuisine.jpg" alt="Traditional Ghanaian food" loading="lazy">
+                    <div class="insight-content">
+                        <h3>Local Cuisine</h3>
+                        <p>Discover authentic dishes like Fante kenkey and fresh seafood</p>
+                        <a href="#" class="text-link">Explore Foods <i class="fas fa-chevron-right"></i></a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Visitor Information -->
+        <section class="visitor-info" id="visit">
+            <h2 class="section-title">Plan Your Visit</h2>
+            <div class="info-grid">
+                <div class="info-card">
+                    <i class="fas fa-car-alt"></i>
+                    <h3>Transportation</h3>
+                    <p>Guided tours and travel options</p>
+                </div>
+                <div class="info-card">
+                    <i class="fas fa-hotel"></i>
+                    <h3>Accommodation</h3>
+                    <p>Recommended hotels and resorts</p>
+                </div>
+                <div class="info-card">
+                    <i class="fas fa-calendar-alt"></i>
+                    <h3>Events</h3>
+                    <p>Cultural festivals and events calendar</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials -->
+        <section class="testimonial-section">
+            <h2 class="section-title">Visitor Experiences</h2>
+            <div class="testimonial-carousel">
+                <div class="testimonial-card">
+                    <blockquote>
+                        "A profound historical journey that stays with you long after visiting"
+                    </blockquote>
+                    <cite>- Travel Africa Magazine</cite>
+                </div>
+                <div class="testimonial-card">
+                    <blockquote>
+                        "The canopy walk at Kakum is an unforgettable ecological experience"
+                    </blockquote>
+                    <cite>- Nature Explorers</cite>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="modern-footer" id="contact">
+        <div class="footer-grid">
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <p><i class="fas fa-map-marker-alt"></i> Cape Coast, Central Region</p>
+                <p><i class="fas fa-phone"></i> +233 123 456 789</p>
+            </div>
+            <div class="footer-section">
+                <h4>Follow Us</h4>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+        <p class="copyright">&copy; 2023 Central Region Tourism. All rights reserved.</p>
+    </footer>
+
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script>
+        // Mobile Menu
+        const mobileToggle = document.querySelector('.mobile-menu-toggle');
+        const mainNav = document.querySelector('.original-nav');
+
+        mobileToggle.addEventListener('click', () => {
+            mainNav.classList.toggle('active');
+        });
+
+        // Smooth Scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            });
+        });
+
+        // Map Initialization
+        function initMap() {
+            const map = L.map('centralRegionMap').setView([5.1315, -1.2797], 9);
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
+
+            // Historical Markers
+            const historicalIcon = L.icon({
+                iconUrl: 'marker-historical.png',
+                iconSize: [32, 32]
+            });
+
+            // Nature Markers
+            const natureIcon = L.icon({
+                iconUrl: 'marker-nature.png',
+                iconSize: [32, 32]
+            });
+
+            // Add Locations
+            const locations = [
+                { coords: [5.0820, -1.3483], title: 'Elmina Castle', icon: historicalIcon },
+                { coords: [5.1037, -1.2416], title: 'Cape Coast Castle', icon: historicalIcon },
+                { coords: [5.3536, -1.3744], title: 'Kakum National Park', icon: natureIcon },
+                { coords: [5.2000, -1.4000], title: 'Brenu Beach', icon: natureIcon }
+            ];
+
+            locations.forEach(loc => {
+                L.marker(loc.coords, { icon: loc.icon })
+                    .addTo(map)
+                    .bindPopup(`<b>${loc.title}</b>`);
+            });
+        }
+
+        // Initialize on load
+        window.addEventListener('load', initMap);
+    </script>
+</body>
+</html>

@@ -1,0 +1,233 @@
+:root {
+    --primary: #008080;
+    --secondary: #f4a460;
+    --light: #f8f8f8;
+    --dark: #333333;
+    --medium: #555555;
+    --border: #dddddd;
+    --shadow-light: rgba(0,0,0,0.1);
+    --shadow-medium: rgba(0,0,0,0.2);
+    --font-primary: 'Roboto', sans-serif;
+    --font-secondary: 'PT Serif', serif;
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-primary);
+    color: var(--dark);
+    line-height: 1.6;
+    background: var(--light);
+}
+
+/* Header Styles */
+.header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 1rem 5%;
+    background: var(--primary);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    box-shadow: 0 2px 10px var(--shadow-medium);
+}
+
+.logo h3 {
+    font-family: var(--font-secondary);
+    font-size: 1.8rem;
+}
+
+.original-nav ul {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+}
+
+.original-nav a {
+    color: white;
+    text-decoration: none;
+    transition: var(--transition);
+    position: relative;
+}
+
+.original-nav a.active,
+.original-nav a:hover {
+    color: var(--secondary);
+}
+
+.mobile-menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* Language Section */
+.language-hero {
+    margin-top: 80px;
+    padding: 6rem 2rem;
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('images/fante-bg.jpg') center/cover;
+    color: white;
+    text-align: center;
+    height: 60vh;
+}
+
+.phrase-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 4rem auto;
+    padding: 0 2rem;
+}
+
+.phrase-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px var(--shadow-light);
+    transition: var(--transition);
+}
+
+.phrase-card:hover {
+    transform: translateY(-5px);
+}
+
+.fante-text {
+    font-size: 1.5rem;
+    color: var(--primary);
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.phonetic {
+    color: var(--secondary);
+    font-style: italic;
+}
+
+.translation {
+    color: var(--dark);
+    margin: 1rem 0;
+}
+
+audio {
+    width: 100%;
+    margin-top: 1.5rem;
+    border-radius: 25px;
+}
+
+/* Booking CTA */
+.booking-cta {
+    text-align: center;
+    padding: 4rem 2rem;
+    background: var(--light);
+}
+
+.cta-button {
+    display: inline-flex;
+    align-items: center;
+    padding: 1rem 2.5rem;
+    background: linear-gradient(135deg, var(--secondary), var(--primary));
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    text-decoration: none;
+}
+
+.cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(244, 164, 96, 0.3);
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    .header {
+        padding: 1rem;
+    }
+
+    .logo h3 {
+        font-size: 1.5rem;
+    }
+
+    .mobile-menu-toggle {
+        display: block;
+        z-index: 1001;
+    }
+
+    .original-nav {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        height: 100vh;
+        width: 80%;
+        max-width: 300px;
+        background: var(--primary);
+        padding: 2rem;
+        transition: left 0.3s ease;
+        z-index: 999;
+    }
+
+    .original-nav.active {
+        left: 0;
+    }
+
+    .original-nav ul {
+        flex-direction: column;
+        margin-top: 4rem;
+    }
+
+    .original-nav li {
+        margin: 1rem 0;
+    }
+
+    .nav-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.5);
+        z-index: 998;
+        display: none;
+    }
+
+    .original-nav.active + .nav-overlay {
+        display: block;
+    }
+
+    .language-hero {
+        padding: 4rem 1rem;
+    }
+
+    .phrase-grid {
+        grid-template-columns: 1fr;
+        padding: 0 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .language-hero h1 {
+        font-size: 2rem;
+    }
+
+    .phrase-card {
+        padding: 1.5rem;
+    }
+
+    audio {
+        margin-top: 1rem;
+    }
+}
